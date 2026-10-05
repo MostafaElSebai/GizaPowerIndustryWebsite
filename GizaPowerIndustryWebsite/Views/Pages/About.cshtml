@@ -2836,91 +2836,82 @@
             .leadership-cards-grid {
                 display: grid;
                 grid-template-columns: repeat(4, 1fr);
-                gap: 20px;
+                gap: 25px;
                 margin-top: 40px;
+                margin-bottom: 40px;
             }
             .leadership-card {
-                border-radius: 24px;
-                padding: 36px 28px;
+                background: #ffffff;
+                border-radius: 12px;
+                padding: 40px 25px;
                 display: flex;
                 flex-direction: column;
-                gap: 16px;
-                position: relative;
-                overflow: hidden;
-                transition: transform 0.35s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s ease;
+                align-items: center;
+                text-align: center;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+                border: 1px solid #f0f0f0;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
             }
             .leadership-card:hover {
-                transform: translateY(-6px);
-                box-shadow: 0 24px 48px rgba(0,0,0,0.18);
+                transform: translateY(-8px);
+                box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
             }
-            .leadership-card.lc-navy {
-                background: linear-gradient(140deg, #06283F 0%, #0c3d5c 100%);
-                color: #fff;
+            .leadership-card h3 {
+                font-size: 1.3rem;
+                font-weight: 800;
+                color: #06283F;
+                margin: 0 0 15px 0;
+                font-family: 'Neulis Sans', 'Cairo', sans-serif;
             }
-            .leadership-card.lc-red {
-                background: linear-gradient(140deg, #B82025 0%, #e02f35 100%);
-                color: #fff;
+            .leadership-card p {
+                font-size: 1.05rem;
+                line-height: 1.7;
+                color: #6c757d;
+                margin: 0 0 30px 0;
+                flex-grow: 1;
             }
-            .leadership-card.lc-dark-navy {
-                background: linear-gradient(140deg, #041D2E 0%, #06283F 100%);
-                color: #fff;
-            }
-            .leadership-card.lc-dark-red {
-                background: linear-gradient(140deg, #8A1419 0%, #B82025 100%);
-                color: #fff;
-            }
-            /* Subtle decorative circle */
-            .leadership-card::after {
-                content: '';
-                position: absolute;
-                top: -60px;
-                right: -60px;
-                width: 200px;
-                height: 200px;
-                border-radius: 50%;
-                background: rgba(255,255,255,0.05);
-                pointer-events: none;
-            }
-            .lc-icon-wrap {
-                width: 56px;
-                height: 56px;
-                border-radius: 14px;
-                background: rgba(255,255,255,0.12);
+            .lc-icon-wrap-new {
+                position: relative;
+                width: 70px;
+                height: 70px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                flex-shrink: 0;
+                margin-top: auto;
             }
-            .lc-icon-wrap svg {
-                width: 28px;
-                height: 28px;
-                stroke: #fff;
+.lc-icon-wrap-new::before {
+                content: '';
+                position: absolute;
+                width: 54px;
+                height: 54px;
+                border-radius: 50%;
+                right: 0px;
+                top: 5px;
+                z-index: 0;
+            }
+            .lc-icon-wrap-new svg {
+                position: relative;
+                z-index: 1;
+                width: 42px;
+                height: 42px;
                 fill: none;
-                stroke-width: 1.75;
+                stroke-width: 1.5;
                 stroke-linecap: round;
                 stroke-linejoin: round;
             }
-            .lc-number {
-                font-size: 12px;
-                font-weight: 700;
-                letter-spacing: 3px;
-                text-transform: uppercase;
-                opacity: 0.5;
+            .lc-icon-red::before {
+                background-color: rgba(184, 32, 37, 0.15);
             }
-            .leadership-card h3 {
-                font-size: 20px;
-                font-weight: 800;
-                line-height: 1.25;
-                color: #fff;
-                margin: 0;
+            .lc-icon-red svg {
+                stroke: #B82025;
             }
-            .leadership-card p {
-                font-size: 14px;
-                line-height: 1.7;
-                color: rgba(255,255,255,0.82);
-                margin: 0;
+            .lc-icon-blue::before {
+                background-color: rgba(6, 40, 63, 0.12);
             }
-            @@media (max-width: 992px) {
+            .lc-icon-blue svg {
+                stroke: #06283F;
+            }
+            @@media (max-width: 1200px) {
                 .leadership-cards-grid {
                     grid-template-columns: repeat(2, 1fr);
                 }
@@ -2933,63 +2924,82 @@
         </style>
 
         <div class="leadership-cards-grid">
-
             <!-- Card 1: Empowering Employees -->
-            <div class="leadership-card lc-navy">
-                <span class="lc-number">01</span>
-                <div class="lc-icon-wrap">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                        <circle cx="9" cy="7" r="4"/>
-                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                    </svg>
-                </div>
+            <div class="leadership-card">
                 <h3>Empowering Employees</h3>
                 <p>We believe in empowering our employees by providing them with the tools, resources, and opportunities they need to succeed. Continuous learning and professional development are at the core of our culture.</p>
+                <div class="lc-icon-wrap-new lc-icon-blue">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <polyline points="17 8 23 8"></polyline>
+                        <polyline points="20 5 20 11"></polyline>
+                    </svg>
+                </div>
             </div>
 
             <!-- Card 2: Fostering Collaboration -->
-            <div class="leadership-card lc-red">
-                <span class="lc-number">02</span>
-                <div class="lc-icon-wrap">
-                    <svg viewBox="0 0 24 24">
-                        <circle cx="6" cy="6" r="2.5"/>
-                        <circle cx="18" cy="6" r="2.5"/>
-                        <circle cx="12" cy="18" r="2.5"/>
-                        <line x1="8" y1="7" x2="10.5" y2="16"/>
-                        <line x1="16" y1="7" x2="13.5" y2="16"/>
-                    </svg>
-                </div>
+            <div class="leadership-card">
                 <h3>Fostering Collaboration</h3>
                 <p>We encourage open communication and teamwork across all levels of the organization. By working together, we can achieve more and drive lasting innovation.</p>
+                <div class="lc-icon-wrap-new lc-icon-red">
+                    <svg viewBox="-0.5 5.25 34 30.5">
+                        <line x1="15.525" y1="14.61" x2="11.46" y2="21.375"></line>
+                        <line x1="20.475" y1="14.61" x2="24.54" y2="21.375"></line>
+                        <line x1="13.8" y1="25.5" x2="22.2" y2="25.5"></line>
+                        
+                        <circle cx="18" cy="10.5" r="4.8"></circle>
+                        <circle cx="18" cy="8.25" r="1.8"></circle>
+                        <path d="M 14.61 13.89 A 4.5 4.5 0 0 1 21.39 13.89"></path>
+                        
+                        <circle cx="9" cy="25.5" r="4.8"></circle>
+                        <circle cx="9" cy="23.25" r="1.8"></circle>
+                        <path d="M 5.61 28.89 A 4.5 4.5 0 0 1 12.39 28.89"></path>
+                        
+                        <circle cx="27" cy="25.5" r="4.8"></circle>
+                        <circle cx="27" cy="23.25" r="1.8"></circle>
+                        <path d="M 23.61 28.89 A 4.5 4.5 0 0 1 30.39 28.89"></path>
+                        
+                        <line x1="22.68" y1="9.45" x2="30.03" y2="7.815"></line>
+                        <circle cx="31.5" cy="7.5" r="1.5"></circle>
+                        
+                        <line x1="4.875" y1="23.025" x2="2.775" y2="21.765"></line>
+                        <circle cx="1.5" cy="21" r="1.5"></circle>
+                        
+                        <line x1="24" y1="29.25" x2="21.93" y2="31.815"></line>
+                        <circle cx="21" cy="33" r="1.5"></circle>
+                    </svg>
+                </div>
             </div>
 
             <!-- Card 3: Driving Innovation -->
-            <div class="leadership-card lc-dark-red">
-                <span class="lc-number">03</span>
-                <div class="lc-icon-wrap">
-                    <svg viewBox="0 0 24 24">
-                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-                    </svg>
-                </div>
+            <div class="leadership-card">
                 <h3>Driving Innovation</h3>
                 <p>Our leaders inspire a culture of innovation by encouraging creative thinking and bold problem-solving. We embrace new technologies and approaches to stay ahead.</p>
+                <div class="lc-icon-wrap-new lc-icon-blue">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M9 18h6"></path>
+                        <path d="M10 22h4"></path>
+                        <path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A6 6 0 1 0 7.5 11.5c.76.76 1.23 1.52 1.41 2.5"></path>
+                    </svg>
+                </div>
             </div>
 
             <!-- Card 4: Cultivating a Positive Workplace -->
-            <div class="leadership-card lc-dark-navy">
-                <span class="lc-number">04</span>
-                <div class="lc-icon-wrap">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                        <polyline points="9 12 11 14 15 10"/>
-                    </svg>
-                </div>
+            <div class="leadership-card">
                 <h3>Cultivating a Positive Workplace</h3>
                 <p>A positive and inclusive workplace is essential for creativity and productivity. We strive to create a supportive environment where every team member feels valued and respected.</p>
+                <div class="lc-icon-wrap-new lc-icon-red">
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="7" r="4"></circle>
+                        <path d="M8 21v-2a4 4 0 0 1 8 0v2"></path>
+                        <circle cx="5" cy="9" r="3"></circle>
+                        <path d="M2 21v-2a3 3 0 0 1 4.5-2.6"></path>
+                        <circle cx="19" cy="9" r="3"></circle>
+                        <path d="M17.5 16.4A3 3 0 0 1 22 19v2"></path>
+                    </svg>
+                </div>
             </div>
-
         </div>
     </div>
 </section>
